@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "超级楼梯", "超级楼�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "邮局选址问题", "邮局选址问题\邮局选址问题.vcxproj", "{BC5B7120-ADF7-472E-8E34-A6C41DBE5BEF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VIJOS-P1037", "VIJOS-P1037\VIJOS-P1037.vcxproj", "{07CD0A28-3F84-42B2-890C-0885F5F957BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{BC5B7120-ADF7-472E-8E34-A6C41DBE5BEF}.Release|x64.Build.0 = Release|x64
 		{BC5B7120-ADF7-472E-8E34-A6C41DBE5BEF}.Release|x86.ActiveCfg = Release|Win32
 		{BC5B7120-ADF7-472E-8E34-A6C41DBE5BEF}.Release|x86.Build.0 = Release|Win32
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Debug|x64.ActiveCfg = Debug|x64
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Debug|x64.Build.0 = Debug|x64
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Debug|x86.ActiveCfg = Debug|Win32
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Debug|x86.Build.0 = Debug|Win32
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Release|x64.ActiveCfg = Release|x64
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Release|x64.Build.0 = Release|x64
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Release|x86.ActiveCfg = Release|Win32
+		{07CD0A28-3F84-42B2-890C-0885F5F957BC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
