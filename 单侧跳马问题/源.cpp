@@ -1,95 +1,73 @@
-﻿//贪心法 
-//跳马问题 
-#include <iostream> 
-#include <iomanip> 
-#include <conio.h> 
+﻿#include<iostream>
+#include<set>
+#include<vector>
 using namespace std;
-#define ROW 8 //行数，可变 
-#define LINE 8 //列数，可变 
-#define NUM ROW*LINE //总格数 
 
-int board[ROW][LINE];
 
-//两个数组存储对应的偏移量 
-int stepRow[8] = { -1,-2,-2,-1,1,2,2,1 };
-int stepLine[8] = { -2,-1,1,2,2,1,-1,-2 };
-
-//求 (i,j) 的出口数，各个出口对应的号存在 a[] 中。 
-//s 表示顺序选择法的开始 
-int exitn(int i, int j, int s, int a[])
+//v中是否包含8
+bool ContainEight(vector<pair<int, int>> v)
 {
-	int i1, j1, k, count;
-	for (count = k = 0; k < 8; k++)
+	for (auto i : v)
 	{
-		i1 = i + stepRow[(s + k) % 8];
-		j1 = j + stepLine[(s + k) % 8];
-		if (i1 >= 0 && i1 < ROW && j1 >= 0 && j1 < LINE && board[i1][j1] == 0)
-		{
-			a[count++] = (s + k) % 8;
-		}
+		if (i.first == 8 && i.second == 8)
+			return true;
 	}
-	return count;
+	return false;
 }
 
-//判断选择下个出口，s 是顺序选择法的开始序号 
-int next(int i, int j, int s)
+bool Check(int x,int y, set<pair<int, int>> s)
 {
-	int m, kk, a[8], b[8], temp;
-	m = exitn(i, j, s, a);
-	if (m == 0) return -1; //没有出口的情况 
-	for (int min = 9, k = 0; k < m; k++)
-	{
-		//逐个考虑取下一步最少的出口的出口 
-		temp = exitn(i + stepRow[a[k]], j + stepLine[a[k]], s, b);
-		if (temp < min)
-		{
-			min = temp;
-			kk = a[k];
-		}
-	}
-	return kk;
+	
+	if (x >= 1 && x <= 8 && y >= 1 && y <= 8 && s.find(pair<int, int>(x, y)) == s.end())
+		return true;
+	return false;
 }
 
 int main()
 {
-	int i, j, step, no, start;
-
-	//对每个位置的点都进行计算得到各个点的结果 
-	//如果只想算某一个点的，把循环去掉换上相应的赋值语句就可以了 
-	for (int sx = 0; sx < ROW; sx++)
-		for (int sy = 0; sy < LINE; sy++)
+	
+	
+	int a, b;
+	while (cin >> a >> b)
+	{
+		vector<pair<int, int>> v;
+		set<pair<int, int>> s;
+		int count = 0;
+		v.push_back(pair<int, int>(a, b));
+		s.insert(pair<int, int>(a, b));
+		while (!v.empty() && !ContainEight(v)/*且v里面不包含（8,8)*/)
 		{
-			start = 0;
-			do
+			count++;
+			vector<pair<int, int>> vnew;
+			for (auto i : v)
 			{
-				for (i = 0; i < ROW; i++)
-					for (j = 0; j < LINE; j++)
-						board[i][j] = 0;
-				board[sx][sy] = 1;
-				i = sx; j = sy;
-				for (step = 2; step <= NUM; step++)
+				if (Check(i.first - 2, i.second + 1, s))
 				{
-					if ((no = next(i, j, start)) == -1)
-						break;
-					i += stepRow[no];
-					j += stepLine[no];
-					board[i][j] = step;
+					vnew.push_back(pair<int, int>(i.first - 2, i.second + 1));
+					s.insert(pair<int, int>(i.first - 2, i.second + 1));
 				}
-				if (step > NUM || no == -1)
-					break;
-				start++;
-			} while (step <= NUM);
-			if (no != -1)
-			{
-				cout << "任意键打印下个结果：" << endl;
-				getch();
-				for (i = 0; i < ROW; i++)
+				if (Check(i.first - 1, i.second + 2, s))
 				{
-					for (j = 0; j < LINE; j++)
-						cout << setw(4) << board[i][j]; //打印 
-					cout << endl;
+					vnew.push_back(pair<int, int>(i.first - 1, i.second + 2));
+					s.insert(pair<int, int>(i.first - 1, i.second + 2));
+				}
+				if (Check(i.first + 2, i.second + 1, s))
+				{
+					vnew.push_back(pair<int, int>(i.first + 2, i.second + 1));
+					s.insert(pair<int, int>(i.first + 2, i.second + 1));
+				}
+				if (Check(i.first + 1, i.second + 2, s))
+				{
+					vnew.push_back(pair<int, int>(i.first + 1, i.second + 2));
+					s.insert(pair<int, int>(i.first + 1, i.second + 2));
 				}
 			}
+			v = vnew;
 		}
+		if (v.empty())
+			cout << "Impossible" << endl;
+		else
+			cout << count << endl;
+	}
 	return 0;
 }
