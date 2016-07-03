@@ -35,6 +35,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "哈夫曼编码", "哈夫�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "小6的多米诺骨牌", "小6的多米诺骨牌\小6的多米诺骨牌.vcxproj", "{EC9DC727-6746-4622-AECD-211C040F540E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Apple Trees", "Apple Trees\Apple Trees.vcxproj", "{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dispsy loves flowers", "Dispsy loves flowers\Dispsy loves flowers.vcxproj", "{DA94E23F-C11C-4142-92B4-F339180E4639}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +175,22 @@ Global
 		{EC9DC727-6746-4622-AECD-211C040F540E}.Release|x64.Build.0 = Release|x64
 		{EC9DC727-6746-4622-AECD-211C040F540E}.Release|x86.ActiveCfg = Release|Win32
 		{EC9DC727-6746-4622-AECD-211C040F540E}.Release|x86.Build.0 = Release|Win32
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Debug|x64.ActiveCfg = Debug|x64
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Debug|x64.Build.0 = Debug|x64
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Debug|x86.Build.0 = Debug|Win32
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Release|x64.ActiveCfg = Release|x64
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Release|x64.Build.0 = Release|x64
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Release|x86.ActiveCfg = Release|Win32
+		{A541C3F4-CE36-4A29-9139-CD60C23AFFDE}.Release|x86.Build.0 = Release|Win32
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Debug|x64.ActiveCfg = Debug|x64
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Debug|x64.Build.0 = Debug|x64
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Debug|x86.Build.0 = Debug|Win32
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Release|x64.ActiveCfg = Release|x64
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Release|x64.Build.0 = Release|x64
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Release|x86.ActiveCfg = Release|Win32
+		{DA94E23F-C11C-4142-92B4-F339180E4639}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
