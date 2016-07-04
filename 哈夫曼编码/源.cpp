@@ -86,8 +86,8 @@ int main(void)
 	
 	int cn; 
 	cin >> cn; 
-	int caseCount = 0; 
-	while (++caseCount <= cn)
+	int cc = 0; 
+	while (++cc <= cn)
 	{
 		
 		Node<int>* trees[1000]; 
@@ -161,7 +161,7 @@ int main(void)
 			
 		}
 		//-----------------------------------------------------------
-		cout << "Case " << caseCount << endl; 
+		cout << "Case " << cc << endl; 
 		SHC(trees[0]); 
 		cout << endl; 
 	}
