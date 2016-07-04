@@ -13,6 +13,7 @@ int main(void)
 	cin>>t; 
 	while (t--)
 	{
+		
 		int max = 0; 
 		int m, n; 
 		cin >> m >> n; 
@@ -21,23 +22,27 @@ int main(void)
 		memset(r, 0, sizeof(r)); 
 		memset(d, 0, sizeof(d)); 
 		memset(u, 0, sizeof(u)); 
+		getchar(); 
 		for (int i = 1; i <= m; i++)
 		{
+			
 			for (int j = 1; j <= n; j++)
 			{
-				cin>>mp[i][j]; 
-
+				
+				mp[i][j] = getchar(); 
+				
 				if (mp[i][j - 1] == '.')
 					l[i][j] = l[i][j - 1] + 1;
 				else
-					l[i][j] = 0;
+					l[i][j] = 0; 
 				if (mp[i - 1][j] == '.')
 					u[i][j] = u[i - 1][j] + 1;
 				else
-					u[i][j] = 0;
+					u[i][j] = 0; 
 				if (mp[i][j] == '.')
-					a[i][j] += l[i][j] + u[i][j];
+					a[i][j] += l[i][j] + u[i][j]; 
 			}
+			getchar(); 
 		}//
 		
 		for (int i = m; i >= 1; i--)
@@ -46,7 +51,7 @@ int main(void)
 				
 				if (mp[i][j + 1] == '.')
 				{
-					r[i][j] = r[i][j + 1] + 1;
+					r[i][j] = r[i][j + 1] + 1; 
 				}
 				else
 					r[i][j] = 0; 
@@ -55,9 +60,9 @@ int main(void)
 				else
 					d[i][j] = 0; 
 				if (mp[i][j] == '.')
-					a[i][j] += r[i][j] + d[i][j];
+					a[i][j] += r[i][j] + d[i][j]; 
 				if (max < a[i][j])
-					max = a[i][j];
+					max = a[i][j]; 
 			}
 		printf("%d\n", max); 
 	}
